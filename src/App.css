@@ -1,0 +1,82 @@
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.expense {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+  gap: 20px;
+}
+.balance {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.button {
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+  /* width: 100%; */
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.transaction {
+  border: 1px solid black;
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.transaction input {
+  border: none;
+  padding: 5px;
+}
+.transaction .radio-boxes {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px;
+  gap: 20px;
+  align-items: center;
+}
+.radio-boxes .radio {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.money-section {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.money-section .section {
+  width: 47%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: white;
+  border: 1px solid;
+  gap: 10px;
+  padding: 10px ;
+}
+.history {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+}
+.history-section {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid;
+  padding: 5px;
+  margin-top: 10px;
+}
