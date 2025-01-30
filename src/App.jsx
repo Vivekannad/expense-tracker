@@ -4,10 +4,12 @@ import "./app.css"
 import AddTransaction from "./Components/AddTransaction";
 import Section from "./Components/Section";
 import History from "./Components/History";
+import Search from "./Components/Search"
 
 const App = () => {
     const [transactionShow, setTransactionShow] = useState(false);
     const [things, setThings] = useState([]);
+    const [filteredThing , setFilteredThing] = useState([]);
     const [expense , setExpense] = useState(0);
     const [income , setIncome] = useState(0);
 
@@ -24,6 +26,7 @@ const App = () => {
             .reduce((total, item) => total + Number(item.amount), 0);
 
             setIncome(income);
+            setFilteredThing(things);
         
     }, [things]);
 
@@ -38,16 +41,19 @@ const App = () => {
                     <Section 
                         text="Expense" 
                         balance={expense} 
+                        color = "red"
                     />
                     <Section 
                         text="Income" 
                         balance={income} 
+                        color = "green"
                     />
                 </div>
 
                 <section className="history">
                     <h3>Transaction</h3>
-                    {things.map((value, index) => (
+                    <Search things = {things} setFilteredThing = {setFilteredThing}/>
+                    {filteredThing.map((value, index) => (
                         <History 
                             key={index}
                             text={value.item} 

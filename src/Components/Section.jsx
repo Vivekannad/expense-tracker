@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Section = ({text , balance}) => {
+const Section = ({text , balance , color}) => {
   return (
     <div className='section'>
         <p>{text}</p>
-        <p>${balance}</p>
+        <p style={{"color" : color }}>${balance}</p>
     </div>
   )
 }

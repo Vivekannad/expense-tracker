@@ -8,14 +8,23 @@
 
 ## ✨ Features
 
-- 💸 **Track Finances**: Monitor both income and expenses in one place
-- 📊 **Real-time Balance**: Instantly see your net balance with automatic calculations
-- 🎯 **Transaction Management**: 
-  - Add new transactions with description and amount
-  - Categorize as income or expense
-  - Color-coded entries for easy identification
-- 🎨 **Modern UI/UX**: Clean, responsive, and user-friendly interface
-- 📱 **Responsive Design**: Works seamlessly on both desktop and mobile devices
+- 💸 **Smart Transaction Management**: 
+  - Add income and expense transactions
+  - Search transactions by description
+  - Color-coded transaction history (🟢 income, 🔴 expense)
+
+- 📊 **Visual Financial Overview**:
+  - Real-time net balance calculation
+  - Color-coded balance displays
+    - Income total in green
+    - Expense total in red
+  - Transaction history with visual indicators
+
+- 🎯 **User Experience**: 
+  - Clean, intuitive interface
+  - Quick transaction entry
+  - Easy transaction filtering
+  - Responsive design for all devices
 
 ## 🚀 Demo
 
@@ -50,21 +59,25 @@ npm run dev
 
 ## 💡 How to Use
 
-1. **View Balance**
-   - See your current net balance at the top
-   - View separate totals for income and expenses
-
-2. **Add Transactions**
-   - Click "Add Transaction" button
-   - Fill in the amount
-   - Add transaction description
-   - Select type (Income/Expense)
+1. **Managing Transactions**
+   - Click "Add Transaction" to open the form
+   - Enter amount and description
+   - Select transaction type:
+     - Income (displays in green)
+     - Expense (displays in red)
    - Submit to add to history
 
-3. **Track History**
-   - View all transactions in the history section
-   - Green border indicates income
-   - Red border indicates expense
+2. **Viewing Finances**
+   - Net balance at the top
+   - Color-coded totals:
+     - Green for total income
+     - Red for total expenses
+   - Chronological transaction history
+
+3. **Finding Transactions**
+   - Use the search bar to filter transactions
+   - Search by transaction description
+   - Real-time filtering as you type
 
 ## 🏗️ Project Structure
 
@@ -75,6 +88,7 @@ src/
 │   ├── Balance.jsx        # Balance display
 │   ├── Button.jsx        # Reusable button
 │   ├── History.jsx       # Transaction history
+│   ├── Search.jsx        # Transaction filter
 │   └── Section.jsx       # Income/Expense sections
 ├── App.jsx               # Main component
 └── app.css              # Styles
