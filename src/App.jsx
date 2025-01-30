@@ -6,6 +6,7 @@ import Section from "./Components/Section";
 import History from "./Components/History";
 import Search from "./Components/Search"
 
+
 const App = () => {
     const [transactionShow, setTransactionShow] = useState(false);
     const [things, setThings] = useState([]);
@@ -13,7 +14,10 @@ const App = () => {
     const [expense , setExpense] = useState(0);
     const [income , setIncome] = useState(0);
 
-    // Calculate totals whenever things array changes
+    /**
+     * Calculate expense and income totals whenever the things array changes.
+     * This is done using the useEffect hook.
+     */
     useEffect(() => {
         const expense = things
             .filter(item => item.type === 'expense')
@@ -34,9 +38,11 @@ const App = () => {
         <div className="container">
             <div className="expense">
                 <h1>Expense Tracker</h1>
+                {/* Show the balance component and based on the transactionShow state, show the add transaction component or not. */}
                 <Balance netBalance={income - expense} setTransactionShow={setTransactionShow} transactionShow={transactionShow} />
                 {transactionShow ? <AddTransaction setThings={setThings} setTransactionShow={setTransactionShow} /> : ""}
 
+                {/* Show two sections: one for expense and one for income. */}
                 <div className="money-section">
                     <Section 
                         text="Expense" 
@@ -50,9 +56,12 @@ const App = () => {
                     />
                 </div>
 
+                {/* Show the history component. */}
                 <section className="history">
                     <h3>Transaction</h3>
+                    {/* Show a search bar. */}
                     <Search things = {things} setFilteredThing = {setFilteredThing}/>
+                    {/* Show all the transaction items. */}
                     {filteredThing.map((value, index) => (
                         <History 
                             key={index}
@@ -66,5 +75,7 @@ const App = () => {
         </div>
     )
 }
+
+
 
 export default App

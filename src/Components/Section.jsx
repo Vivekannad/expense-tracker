@@ -1,12 +1,15 @@
 import React from 'react'
 
-const Section = ({text , balance , color}) => {
+const Section = ({ text, balance, color }) => {
   return (
     <div className='section'>
-        <p>{text}</p>
-        <p style={{"color" : color }}>${balance}</p>
+      {/* Display the section label */}
+      <p>{text}</p>
+      {/* Display the balance with the specified color */}
+      <p style={{ color: color }}>${balance}</p>
     </div>
-  )
+  );
 }
 
-export default Section
+export default Section;
+
